@@ -1,0 +1,138 @@
+.employe-list-container {
+  flex: 1;
+  padding: 0 2.5rem 1.5rem;
+
+  .title {
+    margin: 2rem 0;
+
+    h2 {
+      text-align: center;
+      color: #698e61;
+      font-size: 2rem;
+    }
+  }
+
+  .table-container {
+    border: 1px solid rgba(224, 224, 224, 1);
+
+    .search-container {
+      padding: 1rem 0.5rem;
+
+      .input-container {
+        display: flex;
+        border-bottom: 1px solid rgba(224, 224, 224, 1);
+        width: max-content;
+        padding-bottom: 0.2rem;
+        transition: 0.3s;
+
+        &:hover {
+          border-bottom: 2px solid rgba(224, 224, 224, 1);
+        }
+
+        .icon-container {
+          margin-right: 0.5rem;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+
+        input {
+          border: none;
+          font-size: 1rem;
+
+          &:focus {
+            outline: none;
+          }
+
+          &::placeholder {
+            font-size: 1rem;
+          }
+        }
+      }
+    }
+
+    .table-layout {
+      table {
+        border-collapse: collapse;
+
+        thead {
+          background-color: #698e60;
+
+          tr {
+            border: 1px solid #ddd;
+
+            th {
+              padding: 1rem 0.5rem;
+              //   background-color: red;
+
+              text-align: left;
+              font-weight: normal;
+              font-size: 1rem;
+
+              .th-layout {
+                display: flex;
+                align-items: center;
+                column-gap: 0.5rem;
+
+                span {
+                  color: white;
+                  font-weight: bold;
+                  letter-spacing: 0.8px;
+                }
+
+                .svg-layout {
+                  //   visibility: hidden;
+                  visibility: visible;
+                  background-color: #85608e;
+                  padding: 0.2rem;
+                  border-radius: 50px;
+                  width: max-content;
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+                  transition: 0.2s;
+                  cursor: pointer;
+
+                  svg {
+                    color: white;
+                  }
+
+                  &:hover {
+                    background-color: #614568;
+                  }
+                }
+
+                .selected {
+                  visibility: visible !important;
+                }
+
+                &:hover {
+                  .svg-layout {
+                    visibility: visible;
+                  }
+                }
+              }
+            }
+          }
+        }
+
+        tbody {
+          tr {
+            &:nth-child(even) {
+              background-color: #f2f2f2;
+            }
+
+            td {
+              border: 1px solid #ddd;
+              padding: 8px;
+            }
+
+            &:hover {
+              background-color: #ddd;
+            }
+          }
+        }
+      }
+    }
+  }
+}
