@@ -1,13 +1,13 @@
 const headOfTable = [
-  { name: "First Name", obj: "first_name" },
-  { name: "Last Name", obj: "last_name" },
-  { name: "Start Date", obj: "start_date" },
+  { name: "First Name", obj: "firstName" },
+  { name: "Last Name", obj: "lastName" },
+  { name: "Start Date", obj: "startDate" },
   { name: "Department", obj: "department" },
-  { name: "Date of Birth", obj: "date_of_birth" },
+  { name: "Date of Birth", obj: "dateOfBirth" },
   { name: "Street", obj: "street" },
   { name: "City", obj: "city" },
   { name: "State", obj: "state" },
-  { name: "Zip Code", obj: "zip_code" },
+  { name: "Zip Code", obj: "zipCode" },
 ];
 
 export default headOfTable;

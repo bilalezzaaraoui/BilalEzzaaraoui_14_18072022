@@ -1,69 +1,74 @@
 import "./EmployeList.scss";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { FaSearch } from "react-icons/fa";
 import { FiChevronUp, FiChevronDown } from "react-icons/fi";
-import data from "../../assets/data/data";
+// import data from "../../assets/data/data"; // Fake Data
 import headOfTable from "../../assets/data/headOfTable";
+import { useSelector } from "react-redux";
 
 const EmployeList = () => {
-  const [mockedData, setMockedData] = useState(data);
+  const storeData = useSelector((state) => state.user.arr); // Data original
+  const [data, setData] = useState(storeData);
   const [value, setValue] = useState("");
 
   const sorting = (obj, order, type) => {
     if (type === "string") {
-      console.log("string ok");
       if (order === "ASC") {
-        const sorted = [...mockedData].sort((a, b) =>
-          a[obj].toLowerCase() > b[obj].toLowerCase() ? 1 : -1
-        );
-        setMockedData(sorted);
+        const sorted = [...data]
+          .map((item) => item)
+          .sort((a, b) =>
+            a[obj].toLowerCase() > b[obj].toLowerCase() ? 1 : -1
+          );
+        setData(sorted);
       }
 
       if (order === "DES") {
-        const sorted = [...mockedData].sort((a, b) =>
+        const sorted = [...data].sort((a, b) =>
           a[obj].toLowerCase() < b[obj].toLowerCase() ? 1 : -1
         );
-        setMockedData(sorted);
+        setData(sorted);
       }
     }
 
     if (type === "date") {
       if (order === "ASC") {
-        const sorted = [...mockedData].sort(
+        const sorted = [...data].sort(
           (a, b) => new Date(a[obj]) - new Date(b[obj])
         );
-        setMockedData(sorted);
+        setData(sorted);
       }
 
       if (order === "DES") {
-        const sorted = [...mockedData].sort(
+        const sorted = [...data].sort(
           (a, b) => new Date(b[obj]) - new Date(a[obj])
         );
-        setMockedData(sorted);
+        setData(sorted);
       }
     }
   };
+  useEffect(() => {
+    if (value.length >= 1) {
+      const filteredData = storeData
+        .map((item) => item)
+        .filter((item) => {
+          const search = Object.values(item).find((element) => {
+            if (element.toLowerCase().startsWith(value)) {
+              return element;
+            }
+          });
 
-  if (value.length >= 1) {
-    const filteredData = mockedData.filter((item) => {
-      const search = Object.values(item).find((element) => {
-        if (element.toLowerCase().startsWith(value)) {
-          return element;
-        }
-      });
+          if (search !== undefined) {
+            return item;
+          }
+        });
 
-      if (search !== undefined) {
-        return item;
-      }
-    });
+      setData(filteredData);
+    }
 
-    // setMockedData(filteredData);
-    // setMockedData(filteredData);
-  }
-
-  // if (value.length === 0) {
-  //   setMockedData(data);
-  // }
+    if (value.length === 0) {
+      setData(storeData);
+    }
+  }, [value]);
 
   return (
     <main className="employe-list-container">
@@ -90,7 +95,7 @@ const EmployeList = () => {
               <tr>
                 {headOfTable.map((item, index) => {
                   const type =
-                    item.obj === "start_date" || item.obj === "date_of_birth"
+                    item.obj === "startDate" || item.obj === "dateOfBirth"
                       ? "date"
                       : "string";
                   return (
@@ -116,23 +121,32 @@ const EmployeList = () => {
               </tr>
             </thead>
             <tbody>
-              {mockedData.map((item, index) => {
-                return (
-                  <tr key={index}>
-                    <td>{item.first_name}</td>
-                    <td>{item.last_name}</td>
-                    <td>{item.start_date}</td>
-                    <td>{item.department}</td>
-                    <td>{item.date_of_birth}</td>
-                    <td>{item.street}</td>
-                    <td>{item.city}</td>
-                    <td>{item.state}</td>
-                    <td>{item.zip_code}</td>
-                  </tr>
-                );
-              })}
+              {data.length >= 1
+                ? data.map((item, index) => {
+                    return (
+                      <tr key={index}>
+                        <td>{item.firstName}</td>
+                        <td>{item.lastName}</td>
+                        <td>{item.startDate}</td>
+                        <td>{item.department}</td>
+                        <td>{item.dateOfBirth}</td>
+                        <td>{item.street}</td>
+                        <td>{item.city}</td>
+                        <td>{item.state}</td>
+                        <td>{item.zipCode}</td>
+                      </tr>
+                    );
+                  })
+                : null}
             </tbody>
           </table>
+          {data.length === 0 ? (
+            <div className="error-message">
+              <h3>no employees</h3>
+            </div>
+          ) : (
+            ""
+          )}
         </div>
       </div>
     </main>

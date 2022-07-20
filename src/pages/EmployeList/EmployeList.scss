@@ -125,12 +125,23 @@
             td {
               border: 1px solid #ddd;
               padding: 8px;
+              text-transform: capitalize;
             }
 
             &:hover {
               background-color: #ddd;
             }
           }
+        }
+      }
+
+      .error-message {
+        padding: 2rem;
+        h3 {
+          text-transform: capitalize;
+          text-align: center;
+          font-weight: normal;
+          color: gray;
         }
       }
     }
