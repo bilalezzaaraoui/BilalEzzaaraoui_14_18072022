@@ -2,7 +2,7 @@ import "./Modal.scss";
 import { createPortal } from "react-dom";
 import { Fragment } from "react";
 import { IoClose } from "react-icons/io5";
-import { modalActions } from "../../../store/modalSlice";
+import { modalActions } from "../../store/modalSlice";
 import { useDispatch } from "react-redux";
 
 const Menu = (props) => {

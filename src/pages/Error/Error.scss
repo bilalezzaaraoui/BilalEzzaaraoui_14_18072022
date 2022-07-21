@@ -1,0 +1,12 @@
+.error-container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  h2 {
+    color: #698e61;
+    text-transform: capitalize;
+    font-size: 3rem;
+  }
+}

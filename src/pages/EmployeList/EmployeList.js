@@ -1,10 +1,10 @@
 import "./EmployeList.scss";
 import { useState, useEffect } from "react";
 import { FaSearch } from "react-icons/fa";
-import { FiChevronUp, FiChevronDown } from "react-icons/fi";
 // import data from "../../assets/data/data"; // Fake Data
 import headOfTable from "../../assets/data/headOfTable";
 import { useSelector } from "react-redux";
+import Table from "../../components/Table/Table";
 
 const EmployeList = () => {
   const storeData = useSelector((state) => state.user.arr); // Data original
@@ -46,6 +46,7 @@ const EmployeList = () => {
       }
     }
   };
+
   useEffect(() => {
     if (value.length >= 1) {
       const filteredData = storeData
@@ -90,7 +91,8 @@ const EmployeList = () => {
           </div>
         </div>
         <div className="table-layout">
-          <table style={{ width: "100%" }}>
+          <Table header={headOfTable} newData={data} sorting={sorting} />
+          {/* <table style={{ width: "100%" }}>
             <thead>
               <tr>
                 {headOfTable.map((item, index) => {
@@ -123,23 +125,29 @@ const EmployeList = () => {
             <tbody>
               {data.length >= 1
                 ? data.map((item, index) => {
+                    const startDate = `${item.startDate.split("-")[2]}-${
+                      item.startDate.split("-")[1]
+                    }-${item.startDate.split("-")[0]}`;
+                    const dateOfBirth = `${item.dateOfBirth.split("-")[2]}-${
+                      item.dateOfBirth.split("-")[1]
+                    }-${item.dateOfBirth.split("-")[0]}`;
                     return (
                       <tr key={index}>
                         <td>{item.firstName}</td>
                         <td>{item.lastName}</td>
-                        <td>{item.startDate}</td>
+                        <td>{startDate}</td>
                         <td>{item.department}</td>
-                        <td>{item.dateOfBirth}</td>
+                        <td>{dateOfBirth}</td>
                         <td>{item.street}</td>
                         <td>{item.city}</td>
-                        <td>{item.state}</td>
+                        <td>{item.state.toUpperCase()}</td>
                         <td>{item.zipCode}</td>
                       </tr>
                     );
                   })
                 : null}
             </tbody>
-          </table>
+          </table> */}
           {data.length === 0 ? (
             <div className="error-message">
               <h3>no employees</h3>

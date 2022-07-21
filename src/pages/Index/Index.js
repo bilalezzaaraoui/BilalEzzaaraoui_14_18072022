@@ -5,12 +5,13 @@ import { userActions } from "../../store/userSlice";
 import { modalActions } from "../../store/modalSlice";
 import departements from "../../assets/data/department";
 import states from "../../assets/data/state";
-import Modal from "../../components/modal/Modal.js/Modal";
+import Modal from "../../components/Modal/Modal";
+import DateInput from "../../components/DateInput/DateInput";
+import SelectList from "../../components/SelectList/SelectList";
 
 const Index = () => {
   const form = useRef();
   const dispatch = useDispatch();
-  const data = useSelector((state) => state.user.arr);
   const isOpen = useSelector((state) => state.modal.isOpen);
 
   const handleForm = (e) => {
@@ -43,6 +44,11 @@ const Index = () => {
     dispatch(modalActions.open());
   };
 
+  const maxLengthCheck = (object) => {
+    if (object.value.length > object.maxLength)
+      object.value = object.value.slice(0, object.maxLength);
+  };
+
   return (
     <Fragment>
       <main className="index-container">
@@ -61,11 +67,11 @@ const Index = () => {
             </label>
             <label htmlFor="dateOfBirth">
               <span>date of birth</span>
-              <input type="date" name="dateOfBirth" required />
+              <DateInput name="dateOfBirth" />
             </label>
             <label htmlFor="startDate">
               <span>start date</span>
-              <input type="date" name="startDate" required />
+              <DateInput name="startDate" />
             </label>
             <fieldset>
               <legend>Address</legend>
@@ -79,28 +85,28 @@ const Index = () => {
               </label>
               <label htmlFor="state">
                 <span>state</span>
-                <select name="state" defaultValue="AL" required>
-                  {states.map((item, index) => (
-                    <option key={index} value={item.abbreviation}>
-                      {item.name}
-                    </option>
-                  ))}
-                </select>
+                <SelectList data={states} name="state" defaultValue="AL" />
               </label>
               <label htmlFor="zipcode">
                 <span>zipcode</span>
-                <input type="number" name="zipcode" required />
+                <input
+                  type="number"
+                  name="zipcode"
+                  onChange={(e) => maxLengthCheck(e.target)}
+                  maxLength="5"
+                  min="10000"
+                  max="99999"
+                  required
+                />
               </label>
             </fieldset>
             <label htmlFor="department">
               <span>Department</span>
-              <select name="department" defaultValue="sales" required>
-                {departements.map((item, index) => (
-                  <option value={item.name} key={index}>
-                    {item.name}
-                  </option>
-                ))}
-              </select>
+              <SelectList
+                data={departements}
+                name="department"
+                defaultValue="sales"
+              />
             </label>
             <button type="submit">Save</button>
           </form>
