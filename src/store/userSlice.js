@@ -9,21 +9,7 @@ const userSlice = createSlice({
   initialState: initialState,
   reducers: {
     newUser(state, action) {
-      state.arr = [
-        ...state.arr,
-        action.payload,
-        // {
-        //   firstName: action.payload.firstName,
-        //   lastName: action.payload.lastName,
-        //   startDate: action.payload.startDate,
-        //   department: action.payload.department,
-        //   dateOfBirth: action.payload.dateOfBirth,
-        //   street: action.payload.street,
-        //   city: action.payload.city,
-        //   state: action.payload.state,
-        //   zipCode: action.payload.zipCode,
-        // },
-      ];
+      state.arr = [...state.arr, action.payload];
     },
   },
 });
