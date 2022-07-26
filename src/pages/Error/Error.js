@@ -1,4 +1,15 @@
+import React from "react";
 import "./Error.scss";
+
+/**
+ * Component to display an error page
+ *
+ * @component
+ *
+ * @returns (
+ *  <Error />
+ *)
+ */
 
 const Error = () => {
   return (

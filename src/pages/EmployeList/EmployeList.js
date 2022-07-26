@@ -1,10 +1,21 @@
 import "./EmployeList.scss";
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { FaSearch } from "react-icons/fa";
 // import data from "../../assets/data/data"; // Fake Data
 import headOfTable from "../../assets/data/headOfTable";
 import { useSelector } from "react-redux";
 import Table from "../../components/Table/Table";
+
+/**
+ * Component to display a page of list of employees
+ *
+ * @component
+ *
+ *
+ * @returns (
+ *  <EmployeList />
+ *)
+ */
 
 const EmployeList = () => {
   const storeData = useSelector((state) => state.user.arr); // Data original

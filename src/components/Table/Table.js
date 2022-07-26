@@ -1,4 +1,20 @@
+import React from "react";
 import { FiChevronUp, FiChevronDown } from "react-icons/fi";
+
+/**
+ * Component to display a table
+ *
+ * @component
+ *
+ *
+ * @param {object} props.header - Header of the table
+ * @param {object} props.newData - Data of the table
+ *
+ *
+ * @returns (
+ *  <Table header={headData} newData={bodyData} />
+ *)
+ */
 
 const Table = (props) => {
   return (

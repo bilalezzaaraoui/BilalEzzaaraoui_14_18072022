@@ -1,6 +1,22 @@
+import React, { Fragment } from "react";
 import Header from "./header/Header";
 import Footer from "./footer/Footer";
-import { Fragment } from "react";
+
+/**
+ * Component to display a Layout
+ *
+ * @component
+ *
+ *
+ * @param {object} props.children - All children data between the component
+ *
+ *
+ * @returns (
+ *  <Layout>
+ *    {props.children}
+ *  </Layout>
+ *)
+ */
 
 const Layout = (props) => {
   return (

@@ -1,13 +1,24 @@
 import "./Index.scss";
-import { Fragment, useRef } from "react";
+import React, { Fragment, useRef } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { userActions } from "../../store/userSlice";
 import { modalActions } from "../../store/modalSlice";
 import departements from "../../assets/data/department";
 import states from "../../assets/data/state";
 import Modal from "../../components/Modal/Modal";
-import DateInput from "../../components/DateInput/DateInput";
+import { DateInput } from "modalib";
 import SelectList from "../../components/SelectList/SelectList";
+
+/**
+ * Component to display an index page
+ *
+ * @component
+ *
+ *
+ * @returns (
+ *  <Index />
+ *)
+ */
 
 const Index = () => {
   const form = useRef();

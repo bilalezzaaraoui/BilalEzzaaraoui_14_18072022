@@ -12,6 +12,22 @@ if (mm < 10) {
 
 today = `${yyyy}-${mm}-${dd}`;
 
+/**
+ * Component to display a date input
+ *
+ * @component
+ *
+ *
+ * @param {string} props.name - Name of the input
+ * @example
+ * const string = "dateOfBirth"
+ *
+ *
+ * @returns (
+ *  <DateInput name={string} />
+ *)
+ */
+
 const DateInput = (props) => {
   return <input type="date" name={props.name} max={today} required />;
 };

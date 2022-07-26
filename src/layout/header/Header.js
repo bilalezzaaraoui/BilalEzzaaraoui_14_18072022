@@ -1,6 +1,17 @@
+import React from "react";
 import "./Header.scss";
 import { Link } from "react-router-dom";
 import { BsPeopleFill } from "react-icons/bs";
+
+/**
+ * Component to display a Header
+ *
+ * @component
+ *
+ * @returns (
+ *  <Header />
+ *)
+ */
 
 const Header = () => {
   return (

@@ -1,3 +1,20 @@
+import React from "react";
+/**
+ * Component to display a list of selection
+ *
+ * @component
+ *
+ *
+ * @param {string} props.name - Name of the input
+ * @example
+ * const string = "dateOfBirth"
+ *
+ *
+ * @returns (
+ *  <DateInput name={string} />
+ *)
+ */
+
 const SelectList = (props) => {
   if (props.name === "state") {
     return (

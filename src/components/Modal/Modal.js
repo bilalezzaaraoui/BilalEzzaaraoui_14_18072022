@@ -1,11 +1,21 @@
 import "./Modal.scss";
 import { createPortal } from "react-dom";
-import { Fragment } from "react";
+import React, { Fragment } from "react";
 import { IoClose } from "react-icons/io5";
 import { modalActions } from "../../store/modalSlice";
 import { useDispatch } from "react-redux";
 
-const Menu = (props) => {
+/**
+ * Component to display a modal
+ *
+ * @component
+ *
+ * @returns (
+ *  <Menu  />
+ *)
+ */
+
+const Menu = () => {
   const dispatch = useDispatch();
 
   const closeModal = () => {
@@ -23,7 +33,17 @@ const Menu = (props) => {
   );
 };
 
-const Modal = (props) => {
+/**
+ * Component to display a modal at a certain place
+ *
+ * @component
+ *
+ * @returns (
+ *  <Modal />
+ *)
+ */
+
+const Modal = () => {
   return (
     <Fragment>
       {createPortal(<Menu />, document.getElementById("modal"))}
