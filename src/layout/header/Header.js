@@ -17,12 +17,12 @@ const Header = () => {
   return (
     <header className="header-container">
       <div className="logo">
-        <Link to="/employe-list">
+        <Link to="/BilalEzzaaraoui_14_18072022/employe-list">
           <BsPeopleFill />
         </Link>
       </div>
       <div className="title">
-        <Link to="/">
+        <Link to="/BilalEzzaaraoui_14_18072022/">
           <h1>HRNet</h1>
         </Link>
       </div>
