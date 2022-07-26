@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/BilalEzzaaraoui_14_18072022/static/css/main.669ded0b.css",
-    "main.js": "/BilalEzzaaraoui_14_18072022/static/js/main.eca11866.js",
+    "main.js": "/BilalEzzaaraoui_14_18072022/static/js/main.8500d7a6.js",
     "index.html": "/BilalEzzaaraoui_14_18072022/index.html",
     "main.669ded0b.css.map": "/BilalEzzaaraoui_14_18072022/static/css/main.669ded0b.css.map",
-    "main.eca11866.js.map": "/BilalEzzaaraoui_14_18072022/static/js/main.eca11866.js.map"
+    "main.8500d7a6.js.map": "/BilalEzzaaraoui_14_18072022/static/js/main.8500d7a6.js.map"
   },
   "entrypoints": [
     "static/css/main.669ded0b.css",
-    "static/js/main.eca11866.js"
+    "static/js/main.8500d7a6.js"
   ]
 }
