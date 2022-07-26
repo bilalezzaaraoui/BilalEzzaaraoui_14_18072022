@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.css": "/static/css/main.669ded0b.css",
-    "main.js": "/static/js/main.c03c5c4a.js",
-    "index.html": "/index.html",
-    "main.669ded0b.css.map": "/static/css/main.669ded0b.css.map",
-    "main.c03c5c4a.js.map": "/static/js/main.c03c5c4a.js.map"
+    "main.css": "/BilalEzzaaraoui_14_18072022/static/css/main.669ded0b.css",
+    "main.js": "/BilalEzzaaraoui_14_18072022/static/js/main.c03c5c4a.js",
+    "index.html": "/BilalEzzaaraoui_14_18072022/index.html",
+    "main.669ded0b.css.map": "/BilalEzzaaraoui_14_18072022/static/css/main.669ded0b.css.map",
+    "main.c03c5c4a.js.map": "/BilalEzzaaraoui_14_18072022/static/js/main.c03c5c4a.js.map"
   },
   "entrypoints": [
     "static/css/main.669ded0b.css",
