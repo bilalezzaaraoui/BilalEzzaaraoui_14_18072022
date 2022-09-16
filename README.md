@@ -2,6 +2,8 @@
 
 React version of the HRnet app - openclassrooms project
 
+Demo link: [here](https://hrnet-50936.firebaseapp.com/)
+
 ## Dependencies
 
 - [React](https://reactjs.org/) v17.0.2
