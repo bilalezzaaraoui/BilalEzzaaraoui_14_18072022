@@ -18,11 +18,8 @@ import Error from "../pages/Error/Error";
 const Router = () => {
   return (
     <Routes>
-      <Route path="/BilalEzzaaraoui_14_18072022/" element={<Index />} />
-      <Route
-        path="/BilalEzzaaraoui_14_18072022/employe-list"
-        element={<EmployeList />}
-      />
+      <Route path="/" element={<Index />} />
+      <Route path="/employe-list" element={<EmployeList />} />
       <Route path="*" element={<Error />} />
     </Routes>
   );

@@ -1,7 +1,6 @@
 import "./EmployeList.scss";
 import React, { useState, useEffect } from "react";
 import { FaSearch } from "react-icons/fa";
-// import data from "../../assets/data/data"; // Fake Data
 import headOfTable from "../../assets/data/headOfTable";
 import { useSelector } from "react-redux";
 import Table from "../../components/Table/Table";
@@ -63,11 +62,9 @@ const EmployeList = () => {
       const filteredData = storeData
         .map((item) => item)
         .filter((item) => {
-          const search = Object.values(item).find((element) => {
-            if (element.toLowerCase().startsWith(value)) {
-              return element;
-            }
-          });
+          const search = Object.values(item).find((element) =>
+            element.toLowerCase().startsWith(value) ? element : undefined
+          );
 
           if (search !== undefined) {
             return item;

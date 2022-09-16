@@ -53,6 +53,7 @@ const Index = () => {
       })
     );
     dispatch(modalActions.open());
+    form.current.reset();
   };
 
   const maxLengthCheck = (object) => {
