@@ -6,13 +6,12 @@ Demo link: [here](https://hrnet-50936.firebaseapp.com/)
 
 ## Dependencies
 
-- [React](https://reactjs.org/) v17.0.2
+- [React](https://reactjs.org/) 
 
-- [Sass](https://www.npmjs.com/package/node-sass) v5.0.0
+- [Sass](https://www.npmjs.com/package/sass) 
 
-- [React router](https://reactrouter.com/) v5.2.0
+- [React router](https://reactrouter.com/) 
 
-- [Prop-types](https://www.npmjs.com/package/prop-types) v15.7.2
 
 ## Installation Dependencies
 
